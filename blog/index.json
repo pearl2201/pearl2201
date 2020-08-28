@@ -1,6 +1,6 @@
 [
     {
-        "ref": "http://pearl2201.com/blog/markdown-syntax/",
+        "ref": "https://pearl2201.com/blog/markdown-syntax/",
         "title": "Markdown Syntax Guide",
         "section": "blog",
         "tags": ["markdown","css","html","themes"],
@@ -9,7 +9,7 @@
     }
 ,
     {
-        "ref": "http://pearl2201.com/blog/rich-content/",
+        "ref": "https://pearl2201.com/blog/rich-content/",
         "title": "Rich Content",
         "section": "blog",
         "tags": ["shortcodes","privacy"],
@@ -18,7 +18,7 @@
     }
 ,
     {
-        "ref": "http://pearl2201.com/blog/placeholder-text/",
+        "ref": "https://pearl2201.com/blog/placeholder-text/",
         "title": "Placeholder Text",
         "section": "blog",
         "tags": ["markdown","text"],
@@ -27,7 +27,7 @@
     }
 ,
     {
-        "ref": "http://pearl2201.com/blog/math-typesetting/",
+        "ref": "https://pearl2201.com/blog/math-typesetting/",
         "title": "Math Typesetting",
         "section": "blog",
         "tags": null,
@@ -36,11 +36,20 @@
     }
 ,
     {
-        "ref": "http://pearl2201.com/blog/emoji-support/",
+        "ref": "https://pearl2201.com/blog/emoji-support/",
         "title": "Emoji Support",
         "section": "blog",
         "tags": ["emoji"],
         "date" : "2019.03.05",
         "body": "Emoji can be enabled in a Hugo project in a number of ways.\nThe emojify function can be called directly in templates or Inline Shortcodes.\nTo enable emoji globally, set enableEmoji to true in your site’s configuration and then you can type emoji shorthand codes directly in content files; e.g.\n🙈 :see_no_evil: 🙉 :hear_no_evil: 🙊 :speak_no_evil:\nThe Emoji cheat sheet is a useful reference for emoji shorthand codes.\n N.B. The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.\n.emoji { font-family: Apple Color Emoji,Segoe UI Emoji,NotoColorEmoji,Segoe UI Symbol,Android Emoji,EmojiSymbols; }"
+    }
+,
+    {
+        "ref": "https://pearl2201.com/blog/the-giant-black-book-of-computer-virus-notes/",
+        "title": "",
+        "section": "blog",
+        "tags": null,
+        "date" : "0001.01.01",
+        "body": ""
     }
 ]
