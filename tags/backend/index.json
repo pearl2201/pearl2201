@@ -1,0 +1,10 @@
+[
+    {
+        "ref": "https://pearl2201.com/blog/serverless-mics-note/",
+        "title": "Serverless mics note",
+        "section": "blog",
+        "tags": ["backend"],
+        "date" : "2019.10.22",
+        "body": "Mình biết serverless khoảng 2 năm về trước và chưa dùng bao giờ :)) Thi thoảng có đọc vài bài về nó nên cũng nắm qua đại khái.\nĐặc trưng của serverless là bạn không deploy một server, mà bạn viết các chương trình chạy lấy input rồi xuất output theo chuẩn sdk do nhà cung cấp dịch vụ đưa cho. Điểm khác biệt chính so với server thông thường là bạn không phải “loop” để cho server listen request (http/tcp|udp) và không phải duy trì connection tới các database.\nConcept này nó giống như kiểu bạn dùng một ngôn ngữ chuyên về communication như Erlang, Elixir… để nhận request, sau đó bạn gọi một đoạn shell chạy tới chương trình “serverless” bạn đã viết từ trước, để trả kết quả về.\nƯu điểm lớn nhất là tiết kiệm chi phí và sức vận hành, phù hợp làm page tĩnh, bán tĩnh…\nNhược điểm là debug, thời gian warmup…, không phù hợp các app thời giản thực, đặc biệt là game server… (Stateful)\n"
+    }
+]

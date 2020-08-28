@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>
+      
+          Project Euler Problem 3: Largest prime factor - Site Title
+      
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Anh Ngọc" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://pearl2201.com/img/favicon.ico">
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://pearl2201.com/style.min.6f642c5866835106e8a19b94463576436c99be9e41a8714ab3df3daa95f6bf90.css" integrity="sha256-b2QsWGaDUQbooZuURjV2Q2yZvp5BqHFKs989qpX2v5A=">
+  
+  
+  
+  <link rel="stylesheet" href="https://pearl2201.com/style-dark.min.0a647fb6c07e04b77b54fa0515d0a683d39ecdb251dba960fe1f966f7ff36fc2.css" media="(prefers-color-scheme: dark)" integrity="sha256-CmR/tsB&#43;BLd7VPoFFdCmg9OezbJR26lg/h&#43;Wb3/zb8I=">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  
+  
+
+  <meta property="og:title" content="Project Euler Problem 3: Largest prime factor" />
+<meta property="og:description" content="Problem: The prime factors of 13195 are 5, 7, 13 and 29.
+What is the largest prime factor of the number 600851475143 ?
+Solution: Về cơ bản, đây là bài toán phân tích một số thành thừa số nguyên tố và chọn ra số nguyên tố lớn nhất.
+Để phân tích một số N thành thừa số nguyên tố:
+ Ta sẽ liên tục chia N cho số nguyên tố t(k) cho tới khi không thể tiếp tục được nữa." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pearl2201.com/blog/project-euler-problem-3-largest-prime-factor/" />
+<meta property="article:published_time" content="2019-10-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-10-02T00:00:00+00:00" />
+<meta itemprop="name" content="Project Euler Problem 3: Largest prime factor">
+<meta itemprop="description" content="Problem: The prime factors of 13195 are 5, 7, 13 and 29.
+What is the largest prime factor of the number 600851475143 ?
+Solution: Về cơ bản, đây là bài toán phân tích một số thành thừa số nguyên tố và chọn ra số nguyên tố lớn nhất.
+Để phân tích một số N thành thừa số nguyên tố:
+ Ta sẽ liên tục chia N cho số nguyên tố t(k) cho tới khi không thể tiếp tục được nữa.">
+<meta itemprop="datePublished" content="2019-10-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-10-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="283">
+
+
+
+<meta itemprop="keywords" content="programming," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://pearl2201.com//img/avatar.jpg"/>
+<meta name="twitter:title" content="Project Euler Problem 3: Largest prime factor"/>
+<meta name="twitter:description" content="Problem: The prime factors of 13195 are 5, 7, 13 and 29.
+What is the largest prime factor of the number 600851475143 ?
+Solution: Về cơ bản, đây là bài toán phân tích một số thành thừa số nguyên tố và chọn ra số nguyên tố lớn nhất.
+Để phân tích một số N thành thừa số nguyên tố:
+ Ta sẽ liên tục chia N cho số nguyên tố t(k) cho tới khi không thể tiếp tục được nữa."/>
+
+  <!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+
+  </head>
+
+  <body>
+    
+  <h1>Project Euler Problem 3: Largest prime factor</h1>
+  <header>
+  
+  <div class="avatar">
+    <img class="avatarMask" src="https://pearl2201.com//img/avatar.jpg" alt="">
+    <a href="https://pearl2201.com/"><img class="avatar-border" src="https://pearl2201.com//img/avatar-border.svg" alt=""></a>
+  </div>
+  
+  <h2><a class="author" href="https://pearl2201.com/">Anh Ngọc</a></h2>
+</header>
+
+  
+  
+  
+  <p class="date">October 2, 2019</p>
+  
+  
+  
+  <div id="tags">
+    <ul>
+      
+        
+        
+          <li><a href="https://pearl2201.com/tags/programming/">programming</a></li>
+        
+      
+    </ul>
+  </div>
+  
+  
+  <div id="contentBody">
+    <h3 id="problem">Problem:</h3>
+<p>The prime factors of 13195 are 5, 7, 13 and 29.</p>
+<p>What is the largest prime factor of the number 600851475143 ?</p>
+<h3 id="solution">Solution:</h3>
+<p>Về cơ bản, đây là bài toán phân tích một số thành thừa số nguyên tố và chọn ra số nguyên tố lớn nhất.</p>
+<p>Để phân tích một số N thành thừa số nguyên tố:</p>
+<ul>
+<li>Ta sẽ liên tục chia N cho số nguyên tố t(k) cho tới khi không thể tiếp tục được nữa. Tới đây:</li>
+<li>Nếu N &gt; t(k) thì ta tìm số nguyên tố t(k+1) quay lại bước trên.</li>
+<li>Nếu N &lt; t(k) thì t(k) là số nguyên tố lớn nhất.
+Mã code với Rust.:</li>
+</ul>
+<pre><code>fn get_next_prime_number(arr: &amp;Vec&lt;i64&gt;) -&gt; i64 {
+    let last_prime = arr.last().unwrap();
+    let mut next_prime = last_prime + 1;
+    loop {
+        let mut is_valid = true;
+        for x in arr {
+            if next_prime % x == 0 {
+                is_valid = false;
+                break;
+            }
+        }
+        if is_valid {
+            break;
+        } else {
+            next_prime = next_prime + 1;
+        }
+    }
+ 
+    return next_prime;
+}
+ 
+fn largest_prime_factor(mut n: i64) -&gt; i64 {
+    let mut arr = Vec::new();
+    arr.push(2);
+    let mut current_prime: i64;
+    loop {
+        current_prime = arr[arr.len() -1];
+        while n % current_prime == 0 &amp;&amp; n &gt;= current_prime {
+            n = n / current_prime;
+        }
+ 
+        if n &gt; current_prime {
+            let temp = get_next_prime_number(&amp;arr);
+            arr.push(temp);
+        } else {
+            break;
+        }
+    }
+    return current_prime;
+}
+ 
+fn main() {
+    println!(&quot;Larngest prime factor is: {}&quot;, largest_prime_factor(600851475143));
+}
+ 
+#[test]
+fn test_get_next_prime() {
+    let mut arr = Vec::new();
+    arr.push(2);
+    let mut i = 0;
+    while i &lt; 10 {
+        let temp = get_next_prime_number(&amp;arr);
+        arr.push(temp);
+ 
+        i = i + 1;
+    }
+    assert_eq!(arr.len(), 11);
+    assert_eq!(arr[1], 3);
+}
+ 
+#[test]
+fn test_largest_prime_factor() {
+    assert_eq!(largest_prime_factor(13195), 29);
+}
+</code></pre>
+  </div>
+  <footer>
+  <p>
+  &copy; 2020 Anh Ngọc.
+  Powered by <a href="https://gohugo.io/">Hugo</a>
+  using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
+  </p>
+</footer>
+
+
+  </body>
+</html>

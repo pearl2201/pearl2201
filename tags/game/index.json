@@ -1,0 +1,19 @@
+[
+    {
+        "ref": "https://pearl2201.com/blog/physical-in-game-networking/",
+        "title": "Physical in Game Networking",
+        "section": "blog",
+        "tags": ["game"],
+        "date" : "2019.11.01",
+        "body": "Physic (yếu tố vật lý) trong game networking là một vấn đề khó.\n Thông thường có 3 chiến lược để thực hiện:\n Client thực hiện tính toán vật lý hoàn toàn. Client tính toán vật lý rồi server sẽ kiểm chứng tính toán. Server thực hiện tính toán hoàn dựa trên input của client.   Trên thực tế, phương án 3 (server tính toán hoàn toàn) rất tốn kém và phức tạp, vật nên trong thực tế, chúng ta thường chứng kiến các kiểu số 1 và 2 đi kèm với một số phép tối ưu:\n Chỉ tính toán các yếu tố quan trọng như va chạm, đan trúng player… và bỏ qua các tính toán về mặt địa hình… Đơn giản hóa các yếu tố vật lý trong tính toán: quy hình dạng về các trường hợp dễ dàng tính toán va chạm, overlap như hình tròn, khối hộp, đường thẳng. Né tránh các yếu tố vật lý yêu cầu update như đạn đuổi… Ngoài ra đơn giản hóa quá trình thực hiện hành động như là nếu bạn bắn đạn thì sẽ ngay lập tức cast 1 raycast để tính toán va chạm, rồi trực tiếp trừ điểm vào máu player. Viên đạn bay tới đơn giản chỉ là thể hiện và chấp nhận là viên đạn có thể bay sai lệch sau một khoảng thời giản. Ủy nhiệm 1 client tính toán dựa trên truthcredit, server sẽ vertify lại kết quả. Ủy nhiệm 2 client tính toán để đối chiếu kết quả với nhau Ủy nhiệm xoay vòng giữa các client trong cùng 1 game. Giải quyết collide data giữa các kết quả tính toán client dựa trên verify và số đông. Nếu phát hiện ra các hành vi gian lận, thì ban ngay lập tức đối tượng gây ra hành vì đó, việc có terminate game session hay không phục thuộc vào hậu quả và đánh giá từ phía nhà phát hành.  "
+    }
+,
+    {
+        "ref": "https://pearl2201.com/blog/unity-animation/",
+        "title": "Unity Animation",
+        "section": "blog",
+        "tags": ["game"],
+        "date" : "2019.10.22",
+        "body": "Về cơ bản, để làm animation cho character trong game 2d làm bằng Unity thì chúng ta có 2 lựa chọn chính:\n Dùng model 3d, rig, animate trong Maya… rồi import vào Unity Dùng spine  Dung lượng Model 3d khi build thì sẽ nặng hơn spine, vì chung texture nhưng so giữa (atlas + json) với file model có chênh lệch không nhỏ.\nSử dụng   Model 3d thì nên dùng khi mà bạn phải xử lý blend bone phức tạp, ví dụ như mặt người… Bạn phải dùng animator để mix giữa các animation với nhau, cẩn thận khi xoay quanh trục Z nếu làm flat. Ngoài ra nếu dùng model 3d cho UI thì sẽ phải nghĩ cẩn thận, nếu không sẽ có rắc rối không nhỏ 😀\n  Spine thì dễ sử dụng, có thể dùng trực tiếp trong UI canvas với skeletongraphic, vì flat nên xoay quanh trục Z không ảnh hưởng gì.\n  Bản quyền   Maya, blender trên mạng đầy rẫy crack.\n  Spine thì có một cái crack duy nhất từ bản 1.6 cách đây hơn 6 năm…\n  Mics   Bạn học 3d, sau khi không làm game thì có thể đi làm hoạt họa, làm thiết kế nội thất…\n  Bạn học spine thì đời này chỉ có làm game nếu các ngành khác không sử dụng spine… =))\n  "
+    }
+]

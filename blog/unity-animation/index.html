@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>
+      
+          Unity Animation - Site Title
+      
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Anh Ngọc" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://pearl2201.com/img/favicon.ico">
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://pearl2201.com/style.min.6f642c5866835106e8a19b94463576436c99be9e41a8714ab3df3daa95f6bf90.css" integrity="sha256-b2QsWGaDUQbooZuURjV2Q2yZvp5BqHFKs989qpX2v5A=">
+  
+  
+  
+  <link rel="stylesheet" href="https://pearl2201.com/style-dark.min.0a647fb6c07e04b77b54fa0515d0a683d39ecdb251dba960fe1f966f7ff36fc2.css" media="(prefers-color-scheme: dark)" integrity="sha256-CmR/tsB&#43;BLd7VPoFFdCmg9OezbJR26lg/h&#43;Wb3/zb8I=">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  
+  
+
+  <meta property="og:title" content="Unity Animation" />
+<meta property="og:description" content="Về cơ bản, để làm animation cho character trong game 2d làm bằng Unity thì chúng ta có 2 lựa chọn chính:
+ Dùng model 3d, rig, animate trong Maya… rồi import vào Unity Dùng spine  Dung lượng Model 3d khi build thì sẽ nặng hơn spine, vì chung texture nhưng so giữa (atlas &#43; json) với file model có chênh lệch không nhỏ.
+Sử dụng   Model 3d thì nên dùng khi mà bạn phải xử lý blend bone phức tạp, ví dụ như mặt người… Bạn phải dùng animator để mix giữa các animation với nhau, cẩn thận khi xoay quanh trục Z nếu làm flat." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pearl2201.com/blog/unity-animation/" />
+<meta property="article:published_time" content="2019-10-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-10-22T00:00:00+00:00" />
+<meta itemprop="name" content="Unity Animation">
+<meta itemprop="description" content="Về cơ bản, để làm animation cho character trong game 2d làm bằng Unity thì chúng ta có 2 lựa chọn chính:
+ Dùng model 3d, rig, animate trong Maya… rồi import vào Unity Dùng spine  Dung lượng Model 3d khi build thì sẽ nặng hơn spine, vì chung texture nhưng so giữa (atlas &#43; json) với file model có chênh lệch không nhỏ.
+Sử dụng   Model 3d thì nên dùng khi mà bạn phải xử lý blend bone phức tạp, ví dụ như mặt người… Bạn phải dùng animator để mix giữa các animation với nhau, cẩn thận khi xoay quanh trục Z nếu làm flat.">
+<meta itemprop="datePublished" content="2019-10-22T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-10-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="220">
+
+
+
+<meta itemprop="keywords" content="game," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://pearl2201.com//img/avatar.jpg"/>
+<meta name="twitter:title" content="Unity Animation"/>
+<meta name="twitter:description" content="Về cơ bản, để làm animation cho character trong game 2d làm bằng Unity thì chúng ta có 2 lựa chọn chính:
+ Dùng model 3d, rig, animate trong Maya… rồi import vào Unity Dùng spine  Dung lượng Model 3d khi build thì sẽ nặng hơn spine, vì chung texture nhưng so giữa (atlas &#43; json) với file model có chênh lệch không nhỏ.
+Sử dụng   Model 3d thì nên dùng khi mà bạn phải xử lý blend bone phức tạp, ví dụ như mặt người… Bạn phải dùng animator để mix giữa các animation với nhau, cẩn thận khi xoay quanh trục Z nếu làm flat."/>
+
+  <!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+
+  </head>
+
+  <body>
+    
+  <h1>Unity Animation</h1>
+  <header>
+  
+  <div class="avatar">
+    <img class="avatarMask" src="https://pearl2201.com//img/avatar.jpg" alt="">
+    <a href="https://pearl2201.com/"><img class="avatar-border" src="https://pearl2201.com//img/avatar-border.svg" alt=""></a>
+  </div>
+  
+  <h2><a class="author" href="https://pearl2201.com/">Anh Ngọc</a></h2>
+</header>
+
+  
+  
+  
+  <p class="date">October 22, 2019</p>
+  
+  
+  
+  <div id="tags">
+    <ul>
+      
+        
+        
+          <li><a href="https://pearl2201.com/tags/game/">game</a></li>
+        
+      
+    </ul>
+  </div>
+  
+  
+  <div id="contentBody">
+    <p>Về cơ bản, để làm animation cho character trong game 2d làm bằng Unity thì chúng ta có 2 lựa chọn chính:</p>
+<ul>
+<li>Dùng model 3d, rig, animate trong Maya… rồi import vào Unity</li>
+<li>Dùng spine</li>
+</ul>
+<h3 id="dung-lượng">Dung lượng</h3>
+<p>Model 3d khi build thì sẽ nặng hơn spine, vì chung texture nhưng so giữa (atlas + json) với file model có chênh lệch không nhỏ.</p>
+<h3 id="sử-dụng">Sử dụng</h3>
+<ul>
+<li>
+<p>Model 3d thì nên dùng khi mà bạn phải xử lý blend bone phức tạp, ví dụ như mặt người… Bạn phải dùng animator để mix giữa các animation với nhau, cẩn thận khi xoay quanh trục Z nếu làm flat. Ngoài ra nếu dùng model 3d cho UI thì sẽ phải nghĩ cẩn thận, nếu không sẽ có rắc rối không nhỏ 😀</p>
+</li>
+<li>
+<p>Spine thì dễ sử dụng, có thể dùng trực tiếp trong UI canvas với skeletongraphic, vì flat nên xoay quanh trục Z không ảnh hưởng gì.</p>
+</li>
+</ul>
+<h3 id="bản-quyền">Bản quyền</h3>
+<ul>
+<li>
+<p>Maya, blender trên mạng đầy rẫy crack.</p>
+</li>
+<li>
+<p>Spine thì có một cái crack duy nhất từ bản 1.6 cách đây hơn 6 năm…</p>
+</li>
+</ul>
+<h3 id="mics">Mics</h3>
+<ul>
+<li>
+<p>Bạn học 3d, sau khi không làm game thì có thể đi làm hoạt họa, làm thiết kế nội thất…</p>
+</li>
+<li>
+<p>Bạn học spine thì đời này chỉ có làm game nếu các ngành khác không sử dụng spine… =))</p>
+</li>
+</ul>
+
+  </div>
+  <footer>
+  <p>
+  &copy; 2020 Anh Ngọc.
+  Powered by <a href="https://gohugo.io/">Hugo</a>
+  using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
+  </p>
+</footer>
+
+
+  </body>
+</html>
